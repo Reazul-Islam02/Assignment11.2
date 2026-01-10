@@ -49,7 +49,8 @@ app.post('/webhook', express.raw({ type: 'application/json' }), async (req, res)
 app.use(cors({
     origin: [
         'http://localhost:5173',
-        'https://assignment11-2.netlify.app'
+        'https://assignment11-2.netlify.app',
+        'https://assignment11-2-k4anmy2lj-reazul-islam02s-projects.vercel.app'
     ],
     credentials: true
 }));
