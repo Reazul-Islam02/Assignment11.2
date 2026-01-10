@@ -46,7 +46,13 @@ app.post('/webhook', express.raw({ type: 'application/json' }), async (req, res)
 });
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: [
+        'http://localhost:5173',
+        'https://assignment11-2.netlify.app'
+    ],
+    credentials: true
+}));
 app.use(express.json());
 
 // Routes

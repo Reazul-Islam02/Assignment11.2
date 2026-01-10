@@ -24,8 +24,8 @@ router.post('/create-checkout-session', verifyToken, async (req, res) => {
                 },
             ],
             customer_email: req.user.email, // Use email from token
-            success_url: `${process.env.CLIENT_URL || 'http://localhost:5173'}/payment/success?redirect=${encodeURIComponent(redirectUrl || '/dashboard')}`,
-            cancel_url: `${process.env.CLIENT_URL || 'http://localhost:5173'}/payment/cancel?redirect=${encodeURIComponent(redirectUrl || '/dashboard')}`,
+            success_url: `${process.env.CLIENT_URL || (process.env.NODE_ENV === 'production' ? 'https://assignment11-2.netlify.app' : 'http://localhost:5173')}/payment/success?redirect=${encodeURIComponent(redirectUrl || '/dashboard')}`,
+            cancel_url: `${process.env.CLIENT_URL || (process.env.NODE_ENV === 'production' ? 'https://assignment11-2.netlify.app' : 'http://localhost:5173')}/payment/cancel?redirect=${encodeURIComponent(redirectUrl || '/dashboard')}`,
         });
 
         res.json({ url: session.url });
