@@ -133,7 +133,7 @@ const PublicLessons = () => {
             ) : (
                 <>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-                        {lessons.length > 0 ? (
+                        {Array.isArray(lessons) && lessons.length > 0 ? (
                             lessons.map(lesson => (
                                 <div key={lesson._id} className="animate-in fade-in zoom-in duration-700">
                                     <LessonCard lesson={lesson} />
