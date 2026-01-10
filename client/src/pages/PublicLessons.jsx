@@ -24,8 +24,8 @@ const PublicLessons = () => {
             }).toString();
 
             const res = await axios.get(`${import.meta.env.VITE_API_URL}/lessons?${query}`);
-            setLessons(res.data.lessons);
-            setTotalPages(res.data.totalPages);
+            setLessons(res.data?.lessons || []);
+            setTotalPages(res.data?.totalPages || 1);
         } catch (error) {
             console.error("Error fetching lessons", error);
         } finally {
