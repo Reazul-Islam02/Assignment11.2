@@ -49,7 +49,6 @@ app.post('/webhook', express.raw({ type: 'application/json' }), async (req, res)
 app.use(cors({
     origin: [
         'http://localhost:5173',
-        'https://assignment11-2.netlify.app',
         'https://digital-life-lessons02.netlify.app'
     ],
     credentials: true
